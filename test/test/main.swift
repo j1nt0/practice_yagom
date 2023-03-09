@@ -34,7 +34,8 @@ import Foundation
 //print(string)
 ////"Jin"
 
-var stringArray: [String] = ["jin", "joo", "hoon"]
-var string = stringArray.joined(separator: ", ")
+//var stringArray: [String] = ["jin", "joo", "hoon"]
+//var string = stringArray.joined(separator: ", ")
+//
+//print(string)    //"jin, joo, hoon"
 
-print(string)    //"jin, joo, hoon"

@@ -5,6 +5,15 @@
 //  Created by 이진 on 2023/03/02.
 //
 
+func arrayIntToString(arrayInt: Array<Int>) -> String {
+    let arrayInt = arrayInt
+    
+    let arrayString = arrayInt.map {String($0)}
+    let string = arrayString.joined(separator: ", ")
+    
+    return string
+}
+
 func makeRandomArray(setLength: Int) -> Array<Int> {
     var randomSet = Set<Int>()
     
@@ -18,15 +27,18 @@ func makeRandomArray(setLength: Int) -> Array<Int> {
 }
 
 func checkLottoNumber(round: Int) {
-    var lottoDictionary = Dictionary<String, Any>()
+    var lottoDictionary = Dictionary<String, Array<Int>>()
     
     for round in 1...5{
         lottoDictionary["\(round)회차"] = makeRandomArray(setLength: 6)
     }
     
-    let selectedRoundLottoNumber: Any? = lottoDictionary["\(round)회차"]
+    let selectedRoundLottoNumber = lottoDictionary["\(round)회차"]
     
-    print(selectedRoundLottoNumber)
+    if let optionalBindingSelectedRoundLottoNumber = selectedRoundLottoNumber {
+        let string = arrayIntToString(arrayInt: optionalBindingSelectedRoundLottoNumber)
+        print("\(round)회차의 로또 당첨 번호는 \(string) 입니다.")
+    }
 }
 
 checkLottoNumber(round: 4)
